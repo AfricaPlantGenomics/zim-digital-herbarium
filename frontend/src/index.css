@@ -1,0 +1,159 @@
+/* ── Reset ──────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Design tokens ───────────────────────────────────── */
+:root {
+  /* Colours */
+  --parchment: #f5efe0;
+  --parchment-dark: #e8dcc8;
+  --ink: #1a1209;
+  --ink-light: #3d2e14;
+  --moss: #4a5e35;
+  --moss-light: #6b7f52;
+  --rust: #8b3a1f;
+  --gold: #c4952a;
+  --gold-light: #e6c97a;
+  --gold-text: #7a520a;     /* gold for text on light parchment: 6:1 on parchment, 5.1:1 on parchment-dark */
+  --sepia: #5e3d14;          /* darkened: 8.5:1 on parchment, 7.2:1 on parchment-dark (was #7a5c2e) */
+  --border: #c4a87a;
+
+  /* Typography */
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "Inconsolata", "Courier New", monospace;
+  --font-display: "IM Fell English", Georgia, serif;
+
+  /* Spacing scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+}
+
+/* ── Base ───────────────────────────────────────────── */
+body {
+  font-family: var(--font-serif);
+  background: var(--parchment);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.5;
+  /* Subtle noise texture */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+}
+
+/* ── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--parchment-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+/* ── Reusable utility classes ────────────────────────── */
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  letter-spacing: 0.05em;
+}
+
+.italic {
+  font-style: italic;
+}
+.muted {
+  color: var(--sepia);
+}
+
+/* ── Form controls ───────────────────────────────────── */
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 7px 10px;
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--moss);
+  background: #faf7f0;
+}
+
+label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--sepia);
+  letter-spacing: 0.05em;
+  margin-top: var(--space-sm);
+  margin-bottom: 3px;
+}
+
+/* ── Buttons ─────────────────────────────────────────── */
+button {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border: 1px solid;
+  transition: all 0.15s;
+}
+
+.btn-primary {
+  background: var(--moss);
+  color: var(--parchment);
+  border-color: var(--moss);
+}
+.btn-primary:hover {
+  background: var(--moss-light);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--sepia);
+  border-color: var(--border);
+}
+.btn-ghost:hover {
+  background: var(--parchment-dark);
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--rust);
+  border-color: var(--rust);
+}
+.btn-danger:hover {
+  background: var(--rust);
+  color: white;
+}
+
+/* MapLibre popup override */
+.maplibregl-popup-content {
+  background: var(--ink);
+  color: var(--parchment);
+  border-radius: 0;
+  border: 1px solid var(--gold);
+  font-family: var(--font-serif);
+  padding: 12px 16px;
+}
+.maplibregl-popup-tip {
+  border-top-color: var(--ink) !important;
+}
