@@ -1,5 +1,7 @@
 # SRGH Herbarium — Digital Collection
 
+**[Access the web app](https://cwr.africanplantgenomics.org/)**
+
 A web app for exploring the Zimbabwe Natural History Museum's Crop Wild Relatives herbarium collection. Browse, search, and map over 1,500 plant specimens collected across Zimbabwe from 1902 to 2019.
 
 ---
