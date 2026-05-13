@@ -31,3 +31,11 @@ A web app for exploring the Zimbabwe Natural History Museum's Crop Wild Relative
 ---
 
 For technical setup and API documentation, see [documentation.md](doc/documentation.md).
+
+---
+
+## Citation
+
+If you use this resource, please cite:
+
+Gatula, L., Bezrukov, I., Atemia, J., Chapano, C., Zimudzi, C., & Chatukuta, P. (2026). *Zimbabwe Crop Wild Relatives Digital Herbarium Interactive Web Application*. Zenodo. [https://doi.org/10.5281/zenodo.20137754](https://doi.org/10.5281/zenodo.20137754)
